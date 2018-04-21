@@ -1,0 +1,82 @@
+div.quiz h1 {
+  font-size: 25px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+div.quiz h3 {
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+
+div.quiz div.quiz_choice {
+  background: white;
+  margin: 10px 5px;
+  padding: 0px 10px 100px;
+}
+
+div.quiz div.quiz_choice div.quizC1{
+  float: left;
+  width: 3%;
+  margin-top: 17px;
+  margin-left: 10px;
+  padding-right: 0px;
+}
+
+div.quiz div.quiz_choice div.quizC2{
+  float: left;
+  width: 90%;
+  padding-top: 0px;
+
+
+}
+
+div.quiz div.quiz_choice input[type="checkbox"] {
+  width: 23px;
+  height: 23px;
+  cursor: pointer;
+}
+
+div.quiz div.quiz_choice input[type="checkbox"][disabled]{
+  cursor: default;
+}
+
+div.quiz div.quiz_choice p {
+  display: inline-block;
+  font-size: 20px;
+  margin: 0px 0px 0px 0px;
+}
+
+div.quiz div.quiz_choice_correct {
+  background: #bdffbd;
+}
+
+div.quiz div.quiz_choice_incorrect {
+  background: #ffc8c8;
+}
+
+div.quiz div.quiz_choice_correct, div.quiz div.quiz_choice_incorrect {
+  color: black;
+  border-radius: 25px;
+}
+
+div.quiz div.quizButtonsWrapper {
+  padding: 10px;
+}
+
+div.quiz div.quizButtonsWrapper button.answerTrue, button.answerFalse, button.next, button.begin, div.quiz div.quizButtonsWrapper button.restart {
+  padding: 10px;
+  margin-left: 10px;
+  color: black;
+  background: white;
+  border: 2px solid black;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+div.quiz div.quizButtonsWrapper button[disabled]{
+  color: gray;
+  border: 2px solid gray;
+  cursor: default;
+}
