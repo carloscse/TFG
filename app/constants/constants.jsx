@@ -3,7 +3,9 @@ export const INITIAL_STATE = {
     progress_measure:0,
     score:0,
     objectives:{},
+    game_finished:false,
     index:0,
+    nAnswers:0,
   },
   scorm:null,
   user_profile:{
