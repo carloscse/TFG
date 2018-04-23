@@ -10,7 +10,7 @@ export function init(){
     default_locale = GLOBAL_CONFIG.available_locales[0]; // Default language
   } else {
   }*/
-  default_locale = "fr";
+  default_locale = "es";
 
   // Set locale
   if(isValidLanguage(GLOBAL_CONFIG.locale)){
