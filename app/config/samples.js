@@ -15,14 +15,14 @@ export const quiz_example = {
       "answer":false,
       "index":1,
     }, {
-      "title":"Barbanegra",
-      "img":"El barco en el que navegaba el pirata se llamaba Queen Anne's Revenge",
+      "title":"Kassius Klay",
+      "img":"./assets/images/Ali.jpg",
       "score":10,
       "answer":true,
       "index":2,
     }, {
-      "title":"Prison Break",
-      "img":"La serie de Prison Break consta de 3 temporadas",
+      "title":"Cuarta pregunta",
+      "img":"./assets/images/Atom.png",
       "score":10,
       "answer":false,
       "index":3,
