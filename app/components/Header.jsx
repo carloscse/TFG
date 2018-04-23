@@ -6,10 +6,9 @@ export default class Header extends React.Component {
   }
   render(){
     return (
-
-      <div>
+      <div className="header">
         <h1 id="progress">{this.props.I18n.getTrans("i.progress_measure")}: {this.props.tracking.index + 1}/{this.props.quiz.choices.length}</h1>
-        <h2 id="score">{this.props.I18n.getTrans("i.score")}: {this.props.tracking.score}</h2>
+        <h1 id="score">{this.props.I18n.getTrans("i.score")}: {this.props.tracking.score}</h1>
       </div>
     );
   }

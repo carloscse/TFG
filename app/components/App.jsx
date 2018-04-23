@@ -10,6 +10,7 @@ import SCORM from './SCORM.jsx';
 import Header from './Header.jsx';
 import Quiz from './Quiz.jsx';
 import Info from './Info.jsx';
+import Finish from './Finish.jsx';
 
 export class App extends React.Component {
   constructor(props){
@@ -26,15 +27,15 @@ export class App extends React.Component {
             <Info dispatch={this.props.dispatch} user_profile={this.props.user_profile} tracking={this.props.tracking} quiz={SAMPLES.quiz_example} config={GLOBAL_CONFIG} I18n={I18n}/>
       );
     } else if(((this.props.tracking.finished !== true) || (GLOBAL_CONFIG.finish_screen === false)) || (this.props.game.game_started === false)){
-      appHeader = (
+      /* appHeader = (
             <Header user_profile={this.props.user_profile} tracking={this.props.tracking} config={GLOBAL_CONFIG} I18n={I18n} quiz={SAMPLES.quiz_example} game={this.props.game}/>
-      );
+      );*/
       if(this.props.wait_for_user_profile !== true){
         appContent = (
                 <Quiz dispatch={this.props.dispatch} user_profile={this.props.user_profile} tracking={this.props.tracking} quiz={SAMPLES.quiz_example} config={GLOBAL_CONFIG} I18n={I18n} game={this.props.game}/>
         );
       }
-    } else {
+    } else if(this.props.game.game_finished === true){
       appContent = (
            <Finish dispatch={this.props.dispatch} user_profile={this.props.user_profile} tracking={this.props.tracking} quiz={SAMPLES.quiz_example} config={GLOBAL_CONFIG} I18n={I18n}/>
       );
@@ -50,7 +51,7 @@ export class App extends React.Component {
 }
 
 function mapStateToProps(state){
-    return state;
+  return state;
 }
 
 export default connect(mapStateToProps)(App);
