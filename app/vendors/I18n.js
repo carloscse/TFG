@@ -6,11 +6,11 @@ let locale;
 
 export function init(){
   // Set default locale
-  if((typeof GLOBAL_CONFIG.available_locales !== "undefined") && (GLOBAL_CONFIG.available_locales instanceof Array) && (GLOBAL_CONFIG.available_locales.length > 0)){
+  /* if((typeof GLOBAL_CONFIG.available_locales !== "undefined") && (GLOBAL_CONFIG.available_locales instanceof Array) && (GLOBAL_CONFIG.available_locales.length > 0)){
     default_locale = GLOBAL_CONFIG.available_locales[0]; // Default language
   } else {
-    default_locale = "en";
-  }
+  }*/
+  default_locale = "fr";
 
   // Set locale
   if(isValidLanguage(GLOBAL_CONFIG.locale)){
