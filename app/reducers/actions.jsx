@@ -26,9 +26,10 @@ export function objectiveAccomplished(objectiveId, accomplishedScore = null){
     accomplished_score:accomplishedScore,
   };
 }
-export function finishApp(finished = true){
+export function finishApp(game_finished = true, finished){
   return {
     type:'FINISH_APP',
+    game:game_finished,
     finished:finished,
   };
 }
