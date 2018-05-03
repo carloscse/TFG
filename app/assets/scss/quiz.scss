@@ -1,70 +1,31 @@
-div.quiz h1 {
-  font-size: 25px;
-  margin-top: 25px;
-  margin-bottom: 20px;
+div.info {
+  padding: 10%;
+  text-align: center;
+  font-size: 2em;
 }
 
-div.quiz h3 {
-  font-size: 17px;
-  margin-bottom: 20px;
+div.info .quizButtonsWrapper {
+  padding-top: 10px;
 }
 
-div.quiz div.quiz_choice {
-  background: white;
-  margin: 10px 5px;
-  padding: 0px 10px 100px;
-}
-
-div.quiz div.quiz_choice div.quizC1{
+div.header #progress {
   float: left;
-  width: 3%;
-  margin-top: 17px;
-  margin-left: 10px;
-  padding-right: 0px;
+  padding-left: 30%;
 }
 
-div.quiz div.quiz_choice div.quizC2{
-  float: left;
-  width: 90%;
-  padding-top: 0px;
-
-
-}
-
-div.quiz div.quiz_choice input[type="checkbox"] {
-  width: 23px;
-  height: 23px;
-  cursor: pointer;
-}
-
-div.quiz div.quiz_choice input[type="checkbox"][disabled]{
-  cursor: default;
-}
-
-div.quiz div.quiz_choice p {
-  display: inline-block;
-  font-size: 20px;
-  margin: 0px 0px 0px 0px;
-}
-
-div.quiz div.quiz_choice_correct {
-  background: #bdffbd;
-}
-
-div.quiz div.quiz_choice_incorrect {
-  background: #ffc8c8;
-}
-
-div.quiz div.quiz_choice_correct, div.quiz div.quiz_choice_incorrect {
-  color: black;
-  border-radius: 25px;
+div.header #score {
+  float: right;
+  padding-right: 30%;
 }
 
 div.quiz div.quizButtonsWrapper {
-  padding: 10px;
+  padding-top: 30px;
+  text-align: center;
+  padding-left: 25%;
+  padding-right: 25%;
 }
 
-div.quiz div.quizButtonsWrapper button.answerTrue, button.answerFalse, button.next, button.begin, div.quiz div.quizButtonsWrapper button.restart {
+div.quiz div.quizButtonsWrapper button.answerTrue, button.answerFalse, button.next, button.begin, button.restart {
   padding: 10px;
   margin-left: 10px;
   color: black;
@@ -80,3 +41,52 @@ div.quiz div.quizButtonsWrapper button[disabled]{
   border: 2px solid gray;
   cursor: default;
 }
+
+div.quiz div.quizButtonsWrapper button.answerTrue button.answerFalse {
+  width: 5%;
+}
+
+div.quiz div.quizButtonsWrapper button.answerTrue:hover {
+  background-color: #bdffbd;
+}
+
+div.quiz div.quizButtonsWrapper button.answerFalse:hover {
+  background-color: #ffc8c8;
+}
+
+div.quiz div.quizButtonsWrapper button.next{
+  float: right;
+}
+
+div.quiz div.quizButtonsWrapper button.next:hover{
+  background-color: #bdbdbd;
+}
+
+div.quiz div.quizButtonsWrapper button.restart{
+  float: left;
+}
+
+div.quiz div.quizButtonsWrapper button.restart:hover{
+  background-color: #bdbdbd;
+}
+
+div.info button.begin:hover {
+  background-color: #bdbdbd;
+}
+
+div.quiz .image {
+  display: block;
+  margin: auto;
+  max-width: 50%;
+  max-height: 50%;
+}
+
+div.finish_screen h1 {
+  margin: auto;
+  text-align: center;
+  padding-top: 15%;
+  padding-left: 25%;
+  padding-right: 25%;
+  font-size: 2.5em;
+}
+
