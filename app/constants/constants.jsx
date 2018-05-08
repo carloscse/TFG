@@ -1,11 +1,7 @@
 export const INITIAL_STATE = {
   tracking:{
     progress_measure:0,
-    score:0,
     objectives:{},
-    game_finished:false,
-    index:0,
-    nAnswers:0,
   },
   scorm:null,
   user_profile:{
@@ -15,5 +11,9 @@ export const INITIAL_STATE = {
   },
   game:{
     game_started:false,
+    game_finished:false,
+    index:0,
+    score:0,
+    nAnswers:0,
   },
 };

@@ -6,7 +6,7 @@ export const quiz_example = {
       "title":"El Mundo Today",
       "img":"./assets/images/StephenHawking.png",
       "score":10,
-      "answer":true,
+      "answer":false,
       "index":0,
     }, {
       "title":"Periodico",
@@ -29,5 +29,3 @@ export const quiz_example = {
     },
   ],
 };
-
-// Respuestas correctas: +1 punto. Respuestas incorrectas: -0.5 puntos. Respuestas en blanco: 0 puntos.

@@ -24,17 +24,15 @@ export class App extends React.Component {
 
     if(this.props.game.game_started === false){
       appContent = (
-            <Info dispatch={this.props.dispatch} user_profile={this.props.user_profile} tracking={this.props.tracking} quiz={SAMPLES.quiz_example} config={GLOBAL_CONFIG} I18n={I18n}/>
+            <Info dispatch={this.props.dispatch} user_profile={this.props.user_profile} tracking={this.props.tracking} quiz={SAMPLES.quiz_example} config={GLOBAL_CONFIG} I18n={I18n} game={this.props.game}/>
       );
-    } else if(((this.props.tracking.finished !== true) || (GLOBAL_CONFIG.finish_screen === false)) || (this.props.game.game_started === false)){
+    } else if(((this.props.tracking.finished !== true) || (GLOBAL_CONFIG.finish_screen === false)) || (this.props.game.game_started === true)){
       /* appHeader = (
             <Header user_profile={this.props.user_profile} tracking={this.props.tracking} config={GLOBAL_CONFIG} I18n={I18n} quiz={SAMPLES.quiz_example} game={this.props.game}/>
       );*/
-      if(this.props.wait_for_user_profile !== true){
-        appContent = (
-                <Quiz dispatch={this.props.dispatch} user_profile={this.props.user_profile} tracking={this.props.tracking} quiz={SAMPLES.quiz_example} config={GLOBAL_CONFIG} I18n={I18n} game={this.props.game}/>
+      appContent = (
+           <Quiz dispatch={this.props.dispatch} user_profile={this.props.user_profile} tracking={this.props.tracking} quiz={SAMPLES.quiz_example} config={GLOBAL_CONFIG} I18n={I18n} game={this.props.game}/>
         );
-      }
     } else if(this.props.game.game_finished === true){
       appContent = (
            <Finish dispatch={this.props.dispatch} user_profile={this.props.user_profile} tracking={this.props.tracking} quiz={SAMPLES.quiz_example} config={GLOBAL_CONFIG} I18n={I18n}/>
