@@ -26,11 +26,9 @@ export function objectiveAccomplished(objectiveId, accomplishedScore = null){
     accomplished_score:accomplishedScore,
   };
 }
-export function finishApp(game_finished, finished){
+export function finish(){
   return {
     type:'FINISH_APP',
-    game:game_finished,
-    finished:finished,
   };
 }
 
@@ -40,36 +38,27 @@ export function begin(){
   };
 }
 
-export function next(index){
+export function next(){
   return {
     type:'NEXT_QUESTION',
-    index:index + 1,
   };
 }
 
-export function onAnswerTrue(score, index, nAnswers){
+export function previous(){
   return {
-    type:'ANSWER_QUESTION_TRUE',
-    score:score,
-    index:index,
-    nAnswers:nAnswers,
+    type:'PREVIOUS_QUESTION',
   };
 }
 
-export function onAnswerFalse(score, index, nAnswers){
+export function onAnswer(response){
   return {
-    type:'ANSWER_QUESTION_FALSE',
-    score:score,
-    index:index,
-    nAnswers:nAnswers,
+    type:'ANSWER_QUESTION',
+    response:response,
   };
 }
 
-export function restart(score, index, nAnswers){
+export function restart(){
   return {
     type:'RESTART',
-    score:score,
-    index:index,
-    nAnswers:nAnswers,
   };
 }

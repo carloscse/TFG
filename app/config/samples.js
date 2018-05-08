@@ -1,29 +1,29 @@
 export const quiz_example = {
   "question_type":"multiple_choice",
   "instrucciones":"Las respuestas incorrectas restan la mitad de la puntuación de una pregunta.",
-  "choices": [
+  "choices":[
     {
       "title":"El Mundo Today",
       "img":"./assets/images/StephenHawking.png",
-      "score":10,
+      "score":15,
       "answer":false,
       "index":0,
     }, {
-      "title":"Periodico",
-      "img":"./assets/images/OldNewspaper.jpg",
-      "score":10,
+      "title":"Phishing Santander",
+      "img":"./assets/images/santander.png",
+      "score":20,
       "answer":false,
       "index":1,
     }, {
-      "title":"Kassius Klay",
-      "img":"./assets/images/Ali.jpg",
-      "score":10,
+      "title":"Hombre pegado",
+      "img":"./assets/images/pegado.png",
+      "score":30,
       "answer":true,
       "index":2,
     }, {
-      "title":"Cuarta pregunta",
-      "img":"./assets/images/Atom.png",
-      "score":10,
+      "title":"Justin Bieber",
+      "img":"./assets/images/bieber.jpg",
+      "score":15,
       "answer":false,
       "index":3,
     },

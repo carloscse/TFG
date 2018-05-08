@@ -1,31 +1,23 @@
 import React from 'react';
-// import './../assets/scss/finish_screen.scss';
+import * as I18n from '../vendors/I18n.js';
 
-export default class FinishScreen extends React.Component {
+export default class Finish extends React.Component {
   constructor(props){
     super(props);
   }
   _getFinishScreenTitle(score){
     let finishTitleText;
-    let nChoices = this.props.quiz.choices.length;
-    let nTotal = (this.props.tracking.nAnswers / nChoices) * 100;
-    let hasProgressMeasure = (typeof nTotal === "number");
-    let hasScore = (typeof score === "number");
-    if(hasProgressMeasure && hasScore){
-      finishTitleText = this.props.I18n.getTrans("i.finish_screen_title_full", {nTotal:(nTotal), score:(score)});
-    } else if(hasProgressMeasure){
-      finishTitleText = this.props.I18n.getTrans("i.finish_screen_title_wpm", {nAnswers:(nTotal)});
-    } else if(hasScore){
-      finishTitleText = this.props.I18n.getTrans("i.finish_screen_title_ws", {score:(score)});
+    let puntos = 0;
+    let porcentaje = (this.props.game.nAnswers / this.props.quiz.choices.length) * 100;
+    for(let i = 0; i < this.props.quiz.choices.length; i++){
+      puntos += this.props.quiz.choices[i].score;
     }
-    if(typeof finishTitleText === "undefined"){
-      finishTitleText = this.props.I18n.getTrans("i.finish_screen_title_simple");
-    }
+    finishTitleText = I18n.getTrans("i.finish_screen_title_full", {score:(score), puntos:(puntos), porcentaje:(porcentaje)});
     return finishTitleText;
   }
 
   render(){
-    let finishTitleText = this._getFinishScreenTitle(this.props.tracking.score);
+    let finishTitleText = this._getFinishScreenTitle(this.props.game.score);
     return (
         <div className="finish_screen">
             <h1 id="finish_title">{finishTitleText}</h1>

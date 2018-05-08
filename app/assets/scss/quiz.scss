@@ -1,11 +1,18 @@
 div.info {
-  padding: 10%;
   text-align: center;
   font-size: 2em;
+  padding-top: 7%;
+  padding-left: 25%;
+  padding-right: 25%;
 }
 
-div.info .quizButtonsWrapper {
+div.info button.begin {
+  width: 75%;
   padding-top: 10px;
+}
+
+div.info button.begin:hover {
+  background-color: #bdbdbd;
 }
 
 div.header #progress {
@@ -25,7 +32,7 @@ div.quiz div.quizButtonsWrapper {
   padding-right: 25%;
 }
 
-div.quiz div.quizButtonsWrapper button.answerTrue, button.answerFalse, button.next, button.begin, button.restart {
+div.quiz div.quizButtonsWrapper button.answerTrue, button.answerFalse, button.next, button.begin, button.restart, button.previous, button.end {
   padding: 10px;
   margin-left: 10px;
   color: black;
@@ -36,41 +43,43 @@ div.quiz div.quizButtonsWrapper button.answerTrue, button.answerFalse, button.ne
   cursor: pointer;
 }
 
-div.quiz div.quizButtonsWrapper button[disabled]{
+div.quiz div.quizButtonsWrapper button[disabled] {
   color: gray;
   border: 2px solid gray;
   cursor: default;
 }
 
-div.quiz div.quizButtonsWrapper button.answerTrue button.answerFalse {
+div.quiz button.answerTrue button.answerFalse {
   width: 5%;
 }
 
-div.quiz div.quizButtonsWrapper button.answerTrue:hover {
+div.quiz button.answerTrue:hover {
   background-color: #bdffbd;
 }
 
-div.quiz div.quizButtonsWrapper button.answerFalse:hover {
+div.quiz button.answerFalse:hover {
   background-color: #ffc8c8;
 }
 
-div.quiz div.quizButtonsWrapper button.next{
+div.quiz button.next {
   float: right;
 }
 
-div.quiz div.quizButtonsWrapper button.next:hover{
-  background-color: #bdbdbd;
-}
-
-div.quiz div.quizButtonsWrapper button.restart{
+div.quiz button.previous {
   float: left;
 }
 
-div.quiz div.quizButtonsWrapper button.restart:hover{
+div.quiz button.next:hover, button.previous:hover, button.end:hover {
   background-color: #bdbdbd;
 }
 
-div.info button.begin:hover {
+div.quiz button.restart, button.end {
+  text-align: center;
+  width: 75%;
+  margin-top: 3%;
+}
+
+div.quiz button.restart:hover {
   background-color: #bdbdbd;
 }
 
