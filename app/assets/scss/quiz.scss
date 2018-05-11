@@ -49,11 +49,11 @@ div.quiz div.quizButtonsWrapper button[disabled] {
   cursor: default;
 }
 
-div.quiz button.answerTrue button.answerFalse {
-  width: 5%;
+div.quiz button.answerTrue, button.answerFalse {
+  white-space: normal;
 }
 
-div.quiz button.answerTrue:hover {
+div.quiz div.quizButtonsWrapper button.answerTrue:hover {
   background-color: #bdffbd;
 }
 
@@ -63,10 +63,12 @@ div.quiz button.answerFalse:hover {
 
 div.quiz button.next {
   float: right;
+  white-space: normal;
 }
 
 div.quiz button.previous {
   float: left;
+  white-space: normal;
 }
 
 div.quiz button.next:hover, button.previous:hover, button.end:hover {
@@ -81,6 +83,11 @@ div.quiz button.restart, button.end {
 
 div.quiz button.restart:hover {
   background-color: #bdbdbd;
+}
+
+div.quiz h1{
+  padding-top: 5%;
+  text-align: center;
 }
 
 div.quiz .image {
