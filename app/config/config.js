@@ -4,6 +4,7 @@ export let GLOBAL_CONFIG = {
     debug_scorm_api:true,
     debug_scorm_api_window:false,
     available_locales:["en", "es", "fr"],
+    locale:"fr",
     finish_screen:true,
   },
   production:{
