@@ -74,6 +74,15 @@ export default class Quiz extends React.Component {
     this.props.dispatch(finish());
   }
 
+  /* showFeedback(){
+    let x = document.getElementById("feedback");
+    if(this.props.quiz.choices[this.props.game.index].answered === true){
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }*/
+
   render(){
     return (
       <div id="container">
@@ -97,6 +106,11 @@ export default class Quiz extends React.Component {
             <p>
               <button className="end" onClick={this.onEnd.bind(this)}>{I18n.getTrans("i.end")}</button>
             </p>
+            {/* <p><button onClick={this.showFeedback()}>Show Feedback</button>
+              <div id="feedback">
+                {this.props.quiz.choices[this.props.game.index].feedback}
+              </div>
+            </p>*/}
           </div>
         </div>
       </div>

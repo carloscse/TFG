@@ -14,7 +14,7 @@ export const quiz_example = {
       "title":"¿Se trata de un caso de Phishing?",
       "img":"./assets/images/santander.png",
       "score":20,
-      "answer":false,
+      "answer":true,
       "index":1,
       "answered":false,
       "feedback":"¡Verdadero! Si te fijas en el enlace, a pesar de poner www.santanderrio.com.ar, te redirije a una página desconocida y que no pertenece al Santander.",

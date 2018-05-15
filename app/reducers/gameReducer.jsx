@@ -23,12 +23,12 @@ function gameReducer(state = {}, action){
 
   case 'NEXT_QUESTION':
     receivedState = JSON.parse(JSON.stringify(state));
-    for(let i = 1; i < SAMPLES.quiz_example.choices.length; i++){
-      if((receivedState.index <= SAMPLES.quiz_example.choices.length - 1) && (SAMPLES.quiz_example.choices[receivedState.index + i].answered === false)){
-        receivedState.index += i;
-        break;
-      }
-    }
+    // for(let i = 1; i < SAMPLES.quiz_example.choices.length; i++){
+    //   if((receivedState.index <= SAMPLES.quiz_example.choices.length - 1) && (SAMPLES.quiz_example.choices[receivedState.index + i].answered === false)){
+    receivedState.index += 1;
+    //     break;
+    //  }
+    //}
     if(receivedState.index === 4 && receivedState.nAnswers < SAMPLES.quiz_example.choices.length){
       receivedState.index = 0;
     }
@@ -36,14 +36,14 @@ function gameReducer(state = {}, action){
 
   case 'PREVIOUS_QUESTION':
     receivedState = JSON.parse(JSON.stringify(state));
-    for(let j = 1; j < SAMPLES.quiz_example.choices.length; j++){
-      if((receivedState.index <= SAMPLES.quiz_example.choices.length - 1) && (receivedState.index > 0) && (SAMPLES.quiz_example.choices[receivedState.index - j].answered === false)){
-        receivedState.index -= j;
-        break;
-      }
-    }
-    if(receivedState.index === 4 && receivedState.nAnswers < SAMPLES.quiz_example.choices.length){
-      receivedState.index = 0;
+    // for(let j = 1; j < SAMPLES.quiz_example.choices.length; j++){
+    //   if((receivedState.index <= SAMPLES.quiz_example.choices.length - 1) && (receivedState.index > 0) && (SAMPLES.quiz_example.choices[receivedState.index - j].answered === false)){
+    receivedState.index -= 1;
+    //    break;
+    //   }
+    // }
+    if(receivedState.index < 0 && receivedState.nAnswers < SAMPLES.quiz_example.choices.length){
+      receivedState.index = SAMPLES.quiz_example.choices[SAMPLES.quiz_example.choices.length - 1].index;
     }
     return receivedState;
 
