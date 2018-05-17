@@ -10,7 +10,7 @@ import SCORM from './SCORM.jsx';
 import Quiz from './Quiz.jsx';
 import Info from './Info.jsx';
 import Finish from './Finish.jsx';
-import Modal from './Modal.jsx'
+import Modal from './Modal.jsx';
 
 export class App extends React.Component {
   constructor(props){
@@ -39,7 +39,6 @@ export class App extends React.Component {
     return (
       <div id="container">
         <SCORM dispatch={this.props.dispatch} tracking={this.props.tracking} config={GLOBAL_CONFIG} game={this.props.game}/>
-        <Modal game={this.props.game} quiz={SAMPLES.quiz_example}/>
         {appHeader}
         {appContent}
       </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import './../assets/scss/quiz.scss';
-import {onAnswerWithScorm, finish, previous, next, restart, addObjectives} from './../reducers/actions';
+import {onAnswer, onAnswerWithScorm, finish, previous, next, restart, addObjectives} from './../reducers/actions';
 
 import * as Utils from '../vendors/Utils.js';
 import * as SAMPLES from "../config/samples";
@@ -47,7 +47,7 @@ export default class Quiz extends React.Component {
 
   onAnswerFalse(){
     this.props.dispatch(onAnswerWithScorm(false));
-    alert(this.props.quiz.choices[this.props.game.index].feedback);
+    alert(this.props.quiz.choices[this.props.game.index].feedback_text);
   }
 
   onNextQuestion(){
@@ -82,7 +82,7 @@ export default class Quiz extends React.Component {
         {/* <Modal dispatch={this.props.dispatch} tracking={this.props.tracking} game={this.props.game} quiz={SAMPLES.quiz_example}/>*/}
         <SCORM dispatch={this.props.dispatch} tracking={this.props.tracking} config={GLOBAL_CONFIG}/>
         <div className="header">
-        <Header user_profile={this.props.user_profile} tracking={this.props.tracking} config={GLOBAL_CONFIG} I18n={I18n} quiz={SAMPLES.quiz_example2} game={this.props.game}/>
+        <Header user_profile={this.props.user_profile} tracking={this.props.tracking} config={GLOBAL_CONFIG} I18n={I18n} quiz={SAMPLES.quiz_example} game={this.props.game}/>
         </div>
         <div className="quiz">
           <h1>{this.props.quiz.choices[this.props.game.index].title}</h1>
