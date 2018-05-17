@@ -53,9 +53,13 @@ div.quiz div.quizButtonsWrapper button.answerTrue, button.answerFalse, button.ne
   font-weight: 400;
 }
 
-div.quiz div.quizButtonsWrapper button[disabled] {
+div.quiz div.quizButtonsWrapper button.answerTrue[disabled]{
   color: gray;
-  border: 2px solid gray;
+  cursor: default;
+}
+
+div.quiz div.quizButtonsWrapper button.answerFalse[disabled]{
+  color: gray;
   cursor: default;
 }
 
