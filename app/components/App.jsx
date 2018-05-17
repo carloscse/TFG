@@ -10,6 +10,7 @@ import SCORM from './SCORM.jsx';
 import Quiz from './Quiz.jsx';
 import Info from './Info.jsx';
 import Finish from './Finish.jsx';
+import Modal from './Modal.jsx'
 
 export class App extends React.Component {
   constructor(props){
@@ -28,7 +29,7 @@ export class App extends React.Component {
     } else if(((this.props.tracking.finished !== true) || (GLOBAL_CONFIG.finish_screen === false)) || (this.props.game.game_started === true)){
       appContent = (
            <Quiz dispatch={this.props.dispatch} user_profile={this.props.user_profile} tracking={this.props.tracking} quiz={SAMPLES.quiz_example} config={GLOBAL_CONFIG} I18n={I18n} game={this.props.game}/>
-        );
+      );
     }
     if(this.props.game.game_finished === true){
       appContent = (
@@ -38,6 +39,7 @@ export class App extends React.Component {
     return (
       <div id="container">
         <SCORM dispatch={this.props.dispatch} tracking={this.props.tracking} config={GLOBAL_CONFIG} game={this.props.game}/>
+        <Modal game={this.props.game} quiz={SAMPLES.quiz_example}/>
         {appHeader}
         {appContent}
       </div>

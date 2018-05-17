@@ -19,11 +19,10 @@ export function addObjectives(objectives){
   };
 }
 
-export function objectiveAccomplished(objectiveId, accomplishedScore = null){
+export function objectiveAccomplished(objectiveId){
   return {
     type:'OBJECTIVE_ACCOMPLISHED',
     objective_id:objectiveId,
-    accomplished_score:accomplishedScore,
   };
 }
 export function finish(){
@@ -54,6 +53,20 @@ export function onAnswer(response){
   return {
     type:'ANSWER_QUESTION',
     response:response,
+  };
+}
+
+export function onAnswerWithScorm(response){
+  return (dispatch, getState) => {
+    const firstState = getState();
+    this.dispatch(onAnswer(response));
+    const secondState = getState();
+    // check if there is a new objectives_accomplished
+    if(secondState.score > firstState.score){
+      let last = secondState.objectives.length - 1;
+      console.log("Objetivo cumplido: ", secondState.objectives[last]);
+      this.dispatch(objectiveAccomplished(secondState.objectives[last].id));
+    }
   };
 }
 

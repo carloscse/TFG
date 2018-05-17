@@ -13,15 +13,13 @@ export default class Info extends React.Component {
 
   render(){
     return (
-      <body>
-        <div className="info">
-          <h1>{I18n.getTrans("i.welcome")}</h1>
-          <h3>{I18n.getTrans("i.welcomemsg")}</h3>
-          <div className="quizButtonsWrapper">
-            <button className="begin" onClick={this.onStartGame.bind(this)}>{I18n.getTrans("i.begin")}</button>
-          </div>
+      <div className="info">
+        <h1>{I18n.getTrans("i.welcome")}</h1>
+        <h3>{I18n.getTrans("i.welcomemsg")}</h3>
+        <div className="quizButtonsWrapper">
+          <button className="begin" onClick={this.onStartGame.bind(this)}>{I18n.getTrans("i.begin")}</button>
         </div>
-      </body>
+      </div>
     );
   }
 }

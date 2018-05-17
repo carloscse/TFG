@@ -1,12 +1,14 @@
 import React from 'react';
 import './../assets/scss/quiz.scss';
-import {onAnswer, finish, previous, next, restart} from './../reducers/actions';
+import {onAnswerWithScorm, finish, previous, next, restart, addObjectives} from './../reducers/actions';
 
+import * as Utils from '../vendors/Utils.js';
 import * as SAMPLES from "../config/samples";
 import {GLOBAL_CONFIG} from "../config/config";
 import * as I18n from "../vendors/I18n";
 import SCORM from './SCORM.jsx';
 import Header from './Header.jsx';
+import Modal from './Modal.jsx'
 
 export default class Quiz extends React.Component {
   constructor(props){
@@ -28,23 +30,23 @@ export default class Quiz extends React.Component {
     this.setState({selected_choices_titles:newSelectedChoices});
   }
 
-  onAnswerTrue(){
-    if(this.props.game.index === this.props.quiz.choices.length){
-      this.props.dispatch(onAnswer(true));
-      this.props.dispatch(finish());
-    } else {
-      this.props.dispatch(onAnswer(true));
+  componentDidMount(){
+    // Create objectives (One per question included in the quiz)
+    let objectives = [];
+    let nQuestions = this.props.quiz.choices.length;
+    for(let i = 0; i < nQuestions; i++){
+      objectives.push(new Utils.Objective({id:("Pregunta" + (i + 1)), progress_measure:(1 / nQuestions), score:(this.props.quiz.choices[i].score)}));
     }
-    alert(this.props.quiz.choices[this.props.game.index].feedback);
+    this.props.dispatch(addObjectives(objectives));
+  }
+
+  onAnswerTrue(){
+    this.props.dispatch(onAnswerWithScorm(true));
+    alert(this.props.quiz.choices[this.props.game.index].feedback_text);
   }
 
   onAnswerFalse(){
-    if(this.props.game.index === this.props.quiz.choices.length){
-      this.props.dispatch(onAnswer(false));
-      this.props.dispatch(finish());
-    } else {
-      this.props.dispatch(onAnswer(false));
-    }
+    this.props.dispatch(onAnswerWithScorm(false));
     alert(this.props.quiz.choices[this.props.game.index].feedback);
   }
 
@@ -74,21 +76,13 @@ export default class Quiz extends React.Component {
     this.props.dispatch(finish());
   }
 
-  /* showFeedback(){
-    let x = document.getElementById("feedback");
-    if(this.props.quiz.choices[this.props.game.index].answered === true){
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }*/
-
   render(){
     return (
       <div id="container">
+        {/* <Modal dispatch={this.props.dispatch} tracking={this.props.tracking} game={this.props.game} quiz={SAMPLES.quiz_example}/>*/}
         <SCORM dispatch={this.props.dispatch} tracking={this.props.tracking} config={GLOBAL_CONFIG}/>
         <div className="header">
-        <Header user_profile={this.props.user_profile} tracking={this.props.tracking} config={GLOBAL_CONFIG} I18n={I18n} quiz={SAMPLES.quiz_example} game={this.props.game}/>
+        <Header user_profile={this.props.user_profile} tracking={this.props.tracking} config={GLOBAL_CONFIG} I18n={I18n} quiz={SAMPLES.quiz_example2} game={this.props.game}/>
         </div>
         <div className="quiz">
           <h1>{this.props.quiz.choices[this.props.game.index].title}</h1>
@@ -106,11 +100,6 @@ export default class Quiz extends React.Component {
             <p>
               <button className="end" onClick={this.onEnd.bind(this)}>{I18n.getTrans("i.end")}</button>
             </p>
-            {/* <p><button onClick={this.showFeedback()}>Show Feedback</button>
-              <div id="feedback">
-                {this.props.quiz.choices[this.props.game.index].feedback}
-              </div>
-            </p>*/}
           </div>
         </div>
       </div>
