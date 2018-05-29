@@ -8,7 +8,7 @@ import {GLOBAL_CONFIG} from "../config/config";
 import * as I18n from "../vendors/I18n";
 import SCORM from './SCORM.jsx';
 import Header from './Header.jsx';
-import Modal from './Modal.jsx'
+import Modal from './Modal.jsx';
 
 export default class Quiz extends React.Component {
   constructor(props){
@@ -35,7 +35,7 @@ export default class Quiz extends React.Component {
     let objectives = [];
     let nQuestions = this.props.quiz.choices.length;
     for(let i = 0; i < nQuestions; i++){
-      objectives.push(new Utils.Objective({id:("Pregunta" + (i + 1)), progress_measure:(1 / nQuestions), score:(this.props.quiz.choices[i].score)}));
+      objectives.push(new Utils.Objective({id:("Pregunta " + (i + 1)), progress_measure:(1 / nQuestions), score:(this.props.quiz.choices[i].score)}));
     }
     this.props.dispatch(addObjectives(objectives));
   }
@@ -79,7 +79,7 @@ export default class Quiz extends React.Component {
   render(){
     return (
       <div id="container">
-        {/* <Modal dispatch={this.props.dispatch} tracking={this.props.tracking} game={this.props.game} quiz={SAMPLES.quiz_example}/>*/}
+        {/* <Modal dispatch={this.props.dispatch} tracking={this.props.tracking} game={this.props.game} quiz={SAMPLES}/>*/}
         <SCORM dispatch={this.props.dispatch} tracking={this.props.tracking} config={GLOBAL_CONFIG}/>
         <div className="header">
         <Header user_profile={this.props.user_profile} tracking={this.props.tracking} config={GLOBAL_CONFIG} I18n={I18n} quiz={SAMPLES.quiz_example} game={this.props.game}/>

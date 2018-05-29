@@ -62,10 +62,9 @@ export function onAnswerWithScorm(response){
     dispatch(onAnswer(response));
     const secondState = getState();
     // check if there is a new objectives_accomplished
-    if(secondState.score > firstState.score){
-      let last = secondState.objectives.length - 1;
-      console.log("Objetivo cumplido: ", secondState.objectives[last]);
-      this.dispatch(objectiveAccomplished(secondState.objectives[last].id));
+    if(secondState.game.score > firstState.game.score){
+      console.log("Objective from " + firstState.tracking.objectives["Pregunta " + (firstState.game.index + 1)].id + " was accomplished.");
+      dispatch(objectiveAccomplished(firstState.tracking.objectives["Pregunta " + (firstState.game.index + 1)].id));
     }
   };
 }

@@ -25,7 +25,7 @@ function gameReducer(state = {}, action){
   case 'NEXT_QUESTION':
     receivedState = JSON.parse(JSON.stringify(state));
     receivedState.index += 1;
-    if(receivedState.index === 4 && receivedState.nAnswers < SAMPLES.choices.length){
+    if(receivedState.index === 4 && receivedState.nAnswers < SAMPLES.quiz_example.choices.length){
       receivedState.index = 0;
     }
     return receivedState;
@@ -33,8 +33,8 @@ function gameReducer(state = {}, action){
   case 'PREVIOUS_QUESTION':
     receivedState = JSON.parse(JSON.stringify(state));
     receivedState.index -= 1;
-    if(receivedState.index < 0 && receivedState.nAnswers < SAMPLES.choices.length){
-      receivedState.index = SAMPLES.choices[SAMPLES.choices.length - 1].index;
+    if(receivedState.index < 0 && receivedState.nAnswers < SAMPLES.quiz_example.choices.length){
+      receivedState.index = SAMPLES.quiz_example.choices[SAMPLES.quiz_example.choices.length - 1].index;
     }
     return receivedState;
 
