@@ -59,7 +59,7 @@ export function onAnswer(response){
 export function onAnswerWithScorm(response){
   return (dispatch, getState) => {
     const firstState = getState();
-    this.dispatch(onAnswer(response));
+    dispatch(onAnswer(response));
     const secondState = getState();
     // check if there is a new objectives_accomplished
     if(secondState.score > firstState.score){

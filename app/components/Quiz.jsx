@@ -41,12 +41,12 @@ export default class Quiz extends React.Component {
   }
 
   onAnswerTrue(){
-    this.props.dispatch(onAnswer(true));
+    this.props.dispatch(onAnswerWithScorm(true));
     alert(this.props.quiz.choices[this.props.game.index].feedback_text);
   }
 
   onAnswerFalse(){
-    this.props.dispatch(onAnswer(false));
+    this.props.dispatch(onAnswerWithScorm(false));
     alert(this.props.quiz.choices[this.props.game.index].feedback_text);
   }
 

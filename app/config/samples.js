@@ -64,9 +64,9 @@ export const quiz_example2 = {
       "feedback_text":"A pesar de ser surrealista, esto pasó en Malasia. Si te fijas, en la parte de abajo aparece ABC.ES",
     }, {
       "title":"¿Verdadero o falso?",
-      "img":"./assets/images/news/alcohol.jpg",
+      "img":"./assets/images/news/alcohol.png",
       "score":35,
-      "answer":false,
+      "answer":true,
       "index":2,
       "answered":false,
       "feedback_answer":"Falso",
@@ -123,6 +123,6 @@ export const quiz_example3 = {
       "answered":false,
       "feedback_answer":"Verdadero",
       "feedback_text":"Ocurrió en el verano de 2016 y el conductor dio 4.75 gramos por litro en sangre. De nuevo, esta noticia es de ABC.ES",
-      },
+    },
   ],
 };
