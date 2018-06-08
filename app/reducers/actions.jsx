@@ -25,6 +25,13 @@ export function objectiveAccomplished(objectiveId){
     objective_id:objectiveId,
   };
 }
+
+export function resetObjectives(objectives){
+  return {
+    type:'RESET_OBJECTIVES',
+  };
+}
+
 export function finish(){
   return {
     type:'FINISH_APP',

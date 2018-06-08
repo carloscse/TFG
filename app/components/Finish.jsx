@@ -1,5 +1,7 @@
 import React from 'react';
 import * as I18n from '../vendors/I18n.js';
+import {finish} from './../reducers/actions';
+import {restart} from "../reducers/actions";
 
 export default class Finish extends React.Component {
   constructor(props){
@@ -23,11 +25,18 @@ export default class Finish extends React.Component {
     return finishTitleText;
   }
 
+  onRestartQuiz(){
+    this.props.dispatch(restart());
+  }
+
   render(){
     let finishTitleText = this._getFinishScreenTitle(this.props.game.score);
     return (
         <div className="finish_screen">
           <h1 id="finish_title">{finishTitleText}</h1>
+          <div className="quizButtonsWrapper">
+            <button className="restart" onClick={this.onRestartQuiz.bind(this)}>{I18n.getTrans("i.restart")}</button>
+          </div>
         </div>
     );
   }

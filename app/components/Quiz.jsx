@@ -1,6 +1,6 @@
 import React from 'react';
 import './../assets/scss/quiz.scss';
-import {onAnswer, onAnswerWithScorm, finish, previous, next, restart, addObjectives} from './../reducers/actions';
+import {onAnswer, onAnswerWithScorm, finish, previous, next, restart, addObjectives, resetObjectives} from './../reducers/actions';
 
 import * as Utils from '../vendors/Utils.js';
 import * as SAMPLES from "../config/samples";
@@ -35,7 +35,8 @@ export default class Quiz extends React.Component {
     let objectives = [];
     let nQuestions = this.props.quiz.choices.length;
     for(let i = 0; i < nQuestions; i++){
-      objectives.push(new Utils.Objective({id:("Pregunta " + (i + 1)), progress_measure:(1 / nQuestions), score:(this.props.quiz.choices[i].score)}));
+      let score = this.props.quiz.choices[i].score;
+      objectives.push(new Utils.Objective({id:("Pregunta " + (i + 1)), progress_measure:(1 / nQuestions), score:(score)}));
     }
     this.props.dispatch(addObjectives(objectives));
   }
@@ -70,6 +71,7 @@ export default class Quiz extends React.Component {
 
   onRestartQuiz(){
     this.props.dispatch(restart());
+    this.props.dispatch(resetObjectives(objectives));
   }
 
   onEnd(){
