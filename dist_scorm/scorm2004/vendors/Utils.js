@@ -23,3 +23,12 @@ export function Objective(options){
   next_objective_id += 1;
   return objective;
 }
+
+export function ResetObjective(objective){
+  if(typeof objective !== "object"){
+    return objective;
+  }
+  objective.accomplished = false;
+  objective.accomplished_score = null;
+  return objective;
+}
