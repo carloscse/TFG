@@ -81,7 +81,7 @@ export default class Quiz extends React.Component {
   render(){
     return (
       <div id="container">
-        {/* <Modal dispatch={this.props.dispatch} tracking={this.props.tracking} game={this.props.game} quiz={SAMPLES}/>*/}
+        {/*<Modal dispatch={this.props.dispatch} tracking={this.props.tracking} game={this.props.game} quiz={SAMPLES.quiz_example}/>*/}
         <SCORM dispatch={this.props.dispatch} tracking={this.props.tracking} config={GLOBAL_CONFIG}/>
         <div className="header">
         <Header user_profile={this.props.user_profile} tracking={this.props.tracking} config={GLOBAL_CONFIG} I18n={I18n} quiz={SAMPLES.quiz_example} game={this.props.game}/>

@@ -1,5 +1,4 @@
 export const quiz_example = {
-  "question_type":"multiple_choice",
   "choices":[
     {
       "title":"¿Se trata de un caso de Phishing?",
