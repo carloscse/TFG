@@ -13,13 +13,13 @@ import Modal from './Modal.jsx';
 export default class Quiz extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
+ /* this.state = {
       selected_choices_titles:[],
       current_question_index:0,
-    };
+    };*/
   }
 
-  handleChoiceChange(choice){
+/* handleChoiceChange(choice){
     let newSelectedChoices = Object.assign([], this.state.selected_choices_titles);
     let indexOf = newSelectedChoices.indexOf(choice.title);
     if(indexOf === -1){
@@ -28,7 +28,7 @@ export default class Quiz extends React.Component {
       newSelectedChoices.splice(indexOf, 1);
     }
     this.setState({selected_choices_titles:newSelectedChoices});
-  }
+  }*/
 
   componentDidMount(){
     // Create objectives (One per question included in the quiz)
@@ -81,7 +81,7 @@ export default class Quiz extends React.Component {
   render(){
     return (
       <div id="container">
-        {/*<Modal dispatch={this.props.dispatch} tracking={this.props.tracking} game={this.props.game} quiz={SAMPLES.quiz_example}/>*/}
+        {/* <Modal dispatch={this.props.dispatch} tracking={this.props.tracking} game={this.props.game} quiz={SAMPLES.quiz_example}/>*/}
         <SCORM dispatch={this.props.dispatch} tracking={this.props.tracking} config={GLOBAL_CONFIG}/>
         <div className="header">
         <Header user_profile={this.props.user_profile} tracking={this.props.tracking} config={GLOBAL_CONFIG} I18n={I18n} quiz={SAMPLES.quiz_example} game={this.props.game}/>

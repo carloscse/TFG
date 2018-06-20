@@ -1,7 +1,7 @@
 //RESPONSIVE
 
 //Más de 2000
-@media screen and (min-width: 2000px) {
+@media screen and (min-width: 1999px) {
   div.quizButtonsWrapper {
     padding-top: 30px;
     text-align: center;
@@ -176,12 +176,12 @@
 
 //Entre 1500 y 2000
 
-@media screen and (max-width: 2000px) {
+@media screen and (max-width: 1999px) {
   div.quizButtonsWrapper {
     padding-top: 30px;
     text-align: center;
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 25%;
+    padding-right: 25%;
     font-size: 1em;
   }
 
@@ -217,14 +217,14 @@
 
   div.header #progress {
     float: left;
-    padding-left: 15%;
+    padding-left: 25%;
     color: white;
     position: static;
   }
 
   div.header #score {
     float: right;
-    padding-right: 15%;
+    padding-right: 25%;
     color: white;
     position: static;
   }
@@ -330,7 +330,7 @@
   div.quiz .image {
     display: block;
     margin: auto;
-    width: 70%;
+    width: 50%;
     height: 100%;
   }
 
@@ -754,20 +754,20 @@
 
   div.header #progress {
     float: left;
-    padding-left: 20%;
+    padding-left: 10%;
     color: white;
   }
 
   div.header #score {
     float: right;
-    padding-right: 20%;
+    padding-right: 10%;
     color: white;
   }
 
   div.quiz h1 {
     text-align: center;
     padding-top: 10%;
-    font-size: 1em;
+    font-size:1em;
     color: white;
     margin-bottom: 5%;
   }

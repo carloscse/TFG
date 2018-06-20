@@ -1,5 +1,4 @@
 import * as SAMPLES from "../config/samples";
-import ReactBootstrap from "react-bootstrap";
 
 function gameReducer(state = {}, action){
   let receivedState;
