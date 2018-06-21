@@ -10,7 +10,6 @@ import SCORM from './SCORM.jsx';
 import Quiz from './Quiz.jsx';
 import Info from './Info.jsx';
 import Finish from './Finish.jsx';
-import Modal from './Modal.jsx';
 
 export class App extends React.Component {
   constructor(props){

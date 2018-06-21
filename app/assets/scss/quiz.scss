@@ -1,13 +1,32 @@
+.modal-header {
+  background: paleturquoise;
+  text-align: center;
+}
+.btn-primary{
+  text-align: center;
+  display: block;
+  margin: auto;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
 //RESPONSIVE
 
 //Más de 2000
-@media screen and (min-width: 1999px) {
+@media screen and (min-width: 1999px)   {
   div.quizButtonsWrapper {
     padding-top: 30px;
     text-align: center;
     padding-left: 6%;
     padding-right: 6%;
     font-size: 1em;
+  }
+
+  div.info div.quizButtonsWrapper {
+    text-align: center;
+    padding-left: 25%;
+    padding-right: 25%;
+    font-size: 0.5em;
   }
 
   div.info {
@@ -19,8 +38,13 @@
     color: white;
   }
 
+  div.info h1 {
+    font-size: 2.7em;
+  }
+
   body {
     background-color: #5f5f5f;
+    font-family: Roboto, sans-serif;
   }
 
   div.info button.begin {
@@ -160,7 +184,7 @@
   div.quiz .image {
     display: block;
     margin: auto;
-    width: 70%;
+    width: 40%;
     height: 100%;
   }
 
@@ -185,6 +209,13 @@
     font-size: 1em;
   }
 
+  div.info div.quizButtonsWrapper {
+    text-align: center;
+    padding-left: 25%;
+    padding-right: 25%;
+    font-size: 1em;
+  }
+
   div.info {
     text-align: center;
     font-size: 2em;
@@ -194,12 +225,17 @@
     color: white;
   }
 
+  div.info h1 {
+    font-size: 2.7em;
+  }
+
   div.info button {
     font-size: 1em;
   }
 
   body {
     background-color: #5f5f5f;
+    font-family: Roboto, sans-serif;
   }
 
   div.info button.begin {
@@ -220,6 +256,7 @@
     padding-left: 25%;
     color: white;
     position: static;
+    font-size: 1.9em;
   }
 
   div.header #score {
@@ -227,11 +264,12 @@
     padding-right: 25%;
     color: white;
     position: static;
+    font-size: 1.9em;
   }
 
   div.quiz h1 {
     text-align: center;
-    padding-top: 7%;
+    padding-top: 5%;
     font-size: 2em;
     color: white;
     margin-bottom: 2%;
@@ -330,8 +368,8 @@
   div.quiz .image {
     display: block;
     margin: auto;
-    width: 50%;
-    height: 100%;
+    width: 40%;
+    height: 50%;
   }
 
   div.finish_screen h1 {
@@ -375,6 +413,7 @@
 
   body {
     background-color: #5f5f5f;
+    font-family: Roboto, sans-serif;
   }
 
   div.info button.begin {
@@ -553,6 +592,7 @@
 
   body {
     background-color: #5f5f5f;
+    font-family: Roboto, sans-serif;
   }
 
   div.info button.begin {
@@ -717,22 +757,33 @@
     font-size: 0.5em;
   }
 
-  div.info {
-    margin-top: 10%;
+  div.info div.quizButtonsWrapper {
     text-align: center;
-    font-size: 1.2em;
-    padding-top: 7%;
+    padding-left: 25%;
+    padding-right: 25%;
+    font-size: 0.5em;
+  }
+
+  div.info {
+    text-align: center;
+    font-size: 1em;
+    margin-top: 10%;
     padding-left: 10%;
     padding-right: 10%;
     color: white;
   }
 
+  div.info h3 {
+    font-size: 1.1em;
+  }
+
   div.info button {
-    font-size: 1.3em;
+    font-size: 1.7em;
   }
 
   body {
     background-color: #5f5f5f;
+    font-family: Roboto, sans-serif;
   }
 
   div.info button.begin {
