@@ -50,10 +50,8 @@ function gameReducer(state = {}, action){
     for(let i = 0; i < SAMPLES.quiz_example.choices.length; i++){
       SAMPLES.quiz_example.choices[i].answered = false;
     }
-    if(receivedState.game_finished === true || receivedState.game_started === true){
-      receivedState.game_finished = false;
-      receivedState.game_started = false;
-    }
+    receivedState.game_finished = false;
+    receivedState.game_started = false;
     return receivedState;
 
   default:
