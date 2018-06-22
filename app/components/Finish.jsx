@@ -17,7 +17,7 @@ export default class Finish extends React.Component {
     }
     if(score < puntos / 2){
       finishTitleText = I18n.getTrans("i.finish_screen_title_suspenso", {score:(score), puntos:(puntos), acertadas:(acertadas), longitud:(longitud)});
-    } else if(score > puntos / 2 && score < ((3 * puntos) / 4)){
+    } else if(score >= puntos / 2 && score <= ((3 * puntos) / 4)){
       finishTitleText = I18n.getTrans("i.finish_screen_title_notable", {score:(score), puntos:(puntos), acertadas:(acertadas), longitud:(longitud)});
     } else if(score === puntos){
       finishTitleText = I18n.getTrans("i.finish_screen_title_sobresaliente", {score:(score), puntos:(puntos), acertadas:(acertadas), longitud:(longitud)});

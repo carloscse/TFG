@@ -45,7 +45,7 @@ export default class Quiz extends React.Component {
     if(this.props.game.nAnswers === this.props.quiz.choices.length){
       this.props.dispatch(finish());
     }
-    if(this.props.game.index <= this.props.quiz.choices.length - 1){
+    else if(this.props.game.index <= this.props.quiz.choices.length - 1){
       this.props.dispatch(next());
     }
   }
