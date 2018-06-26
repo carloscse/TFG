@@ -1,7 +1,6 @@
 import * as actions from '../app/reducers/actions.jsx';
 import expect from 'expect';
 import gameReducer from "../app/reducers/gameReducer.jsx";
-import { next, previous } from '../app/reducers/actions.jsx';
 
 
 describe('game reducer', () => {
@@ -22,7 +21,7 @@ describe('game reducer', () => {
         nAnswers:1,
       },
     };
-    const state = gameReducer(TEST_STATE1, next());
+    const state = gameReducer(TEST_STATE1, actions.next());
 
     expect(state.game.index).toEqual(TEST_STATE1.game.index + 1);
     expect(state.game.score).toEqual(TEST_STATE1.game.score);
@@ -40,7 +39,7 @@ describe('game reducer', () => {
         nAnswers:3,
       },
     };
-    const state = gameReducer(TEST_STATE2, previous());
+    const state = gameReducer(TEST_STATE2, actions.previous());
 
     expect(state.game.index).toEqual(TEST_STATE2.game.index - 1);
     expect(state.game.score).toEqual(TEST_STATE2.game.score);
